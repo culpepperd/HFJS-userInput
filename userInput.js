@@ -1,5 +1,32 @@
+var colPrompt1 = "What's your ";
+var colPrompt2 = " favorite color? Options: Red, Blue, Green, Purple, Yellow, Orange, Blood Orange, and Pink.";
+
 function usrFavColors() {
     colorPicker1();
+
+
+    function colorPicker1() {
+        var choice = prompt(colPrompt1 + "#1" + colPrompt2);
+        var col1 = document.getElementById("color1");
+        col1.innerHTML = choice;
+        col1.setAttribute("class", colorSetter(choice));
+        colorPicker2();
+    }
+
+    function colorPicker2() {
+        var choice = prompt(colPrompt1 + "#2" + colPrompt2);
+        var col2 = document.getElementById("color2");
+        col2.innerHTML = choice;
+        col2.setAttribute("class", colorSetter(choice));
+        colorPicker3();
+    }
+
+    function colorPicker3() {
+        var choice = prompt(colPrompt1 + "#3" + colPrompt2);
+        var col3 = document.getElementById("color3");
+        col3.innerHTML = choice;
+        col3.setAttribute("class", colorSetter(choice));
+    }
 
     function colorSetter(userColor) {
         if (userColor == "Red") {
@@ -23,29 +50,6 @@ function usrFavColors() {
             return null;
         }
     }
-
-    function colorPicker1() {
-        var choice = prompt("What's your #1 favorite color? Options: Red, Blue, Green, Purple, Yellow, Orange, Blood Orange, and Pink.");
-        var col1 = document.getElementById("color1");
-        col1.innerHTML = choice;
-        col1.setAttribute("class", colorSetter(choice));
-        colorPicker2();
-    }
-
-    function colorPicker2() {
-        var choice = prompt("What's your #2 favorite color? Options: Red, Blue, Green, Purple, Yellow, Orange, Blood Orange, and Pink.");
-        var col2 = document.getElementById("color2");
-        col2.innerHTML = choice;
-        col2.setAttribute("class", colorSetter(choice));
-        colorPicker3();
-    }
-
-    function colorPicker3() {
-        var choice = prompt("What's your #3 favorite color? Options: Red, Blue, Green, Purple, Yellow, Orange, Blood Orange, and Pink.");
-        var col3 = document.getElementById("color3");
-        col3.innerHTML = choice;
-        col3.setAttribute("class", colorSetter(choice));
-	}
 
 }
 window.onload = usrFavColors;
