@@ -1,7 +1,7 @@
 function usrFavColors() {
-	prompt("What's your favorite color?");
+    colorPicker1();
 
-    function colorPicker(userColor) {
+    function colorSetter(userColor) {
         if (userColor == "Red") {
             return "redtxt";
         } else if (userColor == "Blue") {
@@ -22,7 +22,30 @@ function usrFavColors() {
             alert("Try following directions next time.");
             return null;
         }
+    }
 
+    function colorPicker1() {
+        var choice = prompt("What's your #1 favorite color?");
+        var col1 = document.getElementById("color1");
+        col1.innerHTML = choice;
+        col1.setAttribute("class", colorSetter(choice));
+        colorPicker2();
+    }
+
+    function colorPicker2() {
+        var choice = prompt("What's your #2 favorite color?");
+        var col2 = document.getElementById("color2");
+        col2.innerHTML = choice;
+        col2.setAttribute("class", colorSetter(choice));
+        colorPicker3();
+    }
+
+    function colorPicker3() {
+        var choice = prompt("What's your #3 favorite color?");
+        var col3 = document.getElementById("color3");
+        col3.innerHTML = choice;
+        col3.setAttribute("class", colorSetter(choice));
+	}
 
 }
 window.onload = usrFavColors;
